@@ -18,7 +18,7 @@
       t.src=v;s=b.getElementsByTagName(e)[0];
       s.parentNode.insertBefore(t,s)
     }(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '681932944683678'); // 🔁 Reemplaza con tu ID real
+    fbq('init', '681932944683678'); // Reemplaza con tu ID real
     fbq('track', 'PageView');
   </script>
   <noscript>
@@ -32,13 +32,27 @@
     <div class="overlay">
       <h1>🔥 ESCRIBÍ TU NOMBRE Y CREA TU USUARIO 🔥</h1>
       <p class="highlight">PAGOS EN EL ACTO Y RETIROS<br>SIN LÍMITE</p>
-      <a class="btn" href="https://wa.me/+5491171458939" target="_blank">
+      
+      <!-- Botón de WhatsApp con ID para el evento -->
+      <a id="whatsapp-btn" class="btn" href="https://wa.me/+5491171458939" target="_blank">
         ¡CREA TU USUARIO!
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="icon"/>
       </a>
     </div>
     <footer class="footer">RULETA EN VIVO - SLOTS - APUESTAS</footer>
   </div>
+
+  <!-- EVENTO CLICK A WHATSAPP -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const whatsappBtn = document.getElementById('whatsapp-btn');
+      if (whatsappBtn) {
+        whatsappBtn.addEventListener('click', function () {
+          fbq('trackCustom', 'ClickWhatsApp');
+        });
+      }
+    });
+  </script>
 
 </body>
 </html>
