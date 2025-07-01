@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
@@ -34,11 +34,11 @@
     <div class="overlay">
       <h1>🔥 ESCRIBINOS Y RECLAMA TU BONO DEL 50% 🔥</h1>
       <div class="highlight">PAGOS EN EL ACTO Y RETIROS SIN LÍMITE</div>
-      <a class="btn" href="https://wa.me/5491133257350" target="_blank">
-        <span>¡CREA TU USUARIO!</span>
+      <a id="whatsapp-btn" class="btn" href="https://wa.me/+5492235312454?text=Hola%20glory%20quiero%20un%20usuario%2C%20mi%20nombre%20es%20%3A" target="_blank">
+        <span>Hola quiero un usuario</span>
         <img class="icon" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
       </a>
-          </div>
+    </div>
   
     <div class="footer">RULETA EN VIVO - SLOTS - APUESTAS</div>
   </div>
@@ -48,8 +48,12 @@
     document.addEventListener('DOMContentLoaded', function () {
       const whatsappBtn = document.getElementById('whatsapp-btn');
       if (whatsappBtn) {
-        whatsappBtn.addEventListener('click', function () {
+        whatsappBtn.addEventListener('click', function (e) {
+          e.preventDefault(); // Prevenir redirección inmediata
           fbq('trackCustom', 'ClickWhatsApp');
+          setTimeout(() => {
+            window.open('https://wa.me/+5492235312454?text=Hola%20glory%20quiero%20un%20usuario%2C%20mi%20nombre%20es%20%3A', '_blank');
+          }, 200); // Esperar 200 ms para que el evento se dispare
         });
       }
     });
